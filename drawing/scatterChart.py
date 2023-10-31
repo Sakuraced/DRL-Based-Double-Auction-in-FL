@@ -1,0 +1,121 @@
+import sys
+import importlib
+importlib.reload(sys)
+
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib as mpl
+mpl.rc('font',family='Times New Roman',weight=100)
+ac=[70.81413536071777, 78.28444786071778, 83.17399635314942, 85.05468406677247, 84.8856029510498, 86.84562225341797, 87.73611793518066, 88.87132263183594, 89.05914649963378, 89.54415702819824, 88.94824676513672, 89.81794624328613, 90.14569969177246, 89.88314437866211, 89.64378623962402, 90.98297729492188, 91.1195297241211, 90.08912200927735, 90.87119750976562, 90.52462272644043, 90.15335540771484, 90.41052932739258, 90.71895484924316, 90.3033836364746, 90.91798210144043, 90.80820846557617, 90.5630657196045, 90.14287185668945, 90.84745635986329, 91.09644927978516, 90.48965568542481, 90.63772888183594, 90.87534561157227, 90.36753005981446, 90.96514778137207, 90.31478271484374, 90.77623023986817, 90.84489288330079, 89.90432090759278, 90.96159477233887, 90.21826438903808, 90.69261207580567, 90.50075454711914, 90.91342582702637, 90.28392219543457, 91.26566619873047, 90.00933685302735, 89.81239395141601, 90.37576141357422, 33.24121446609497, 43.3753381729126, 49.16898279190063, 55.07527084350586, 58.30265884399414, 62.612396240234375, 65.08110599517822, 66.10314846038818, 69.69140510559082, 70.19202270507813, 71.13763256072998, 72.04816303253173, 73.3455961227417, 74.19969272613525, 74.51800365447998, 76.3584020614624, 75.31021156311036, 75.41053771972656, 77.13603210449219, 76.9908037185669, 78.01341705322265, 77.14973316192626, 78.49146633148193, 79.42931671142578, 79.29727745056152, 79.52506732940674, 78.89956398010254, 79.50321998596192, 79.84259929656983, 80.10486602783203, 79.17895050048828, 80.36288223266601, 81.13963928222657, 81.06158065795898, 80.8451141357422, 81.58929901123047, 81.47674026489258, 81.01129837036133, 81.85636291503906, 82.09191780090332, 80.9705020904541, 82.3172706604004, 80.8742057800293, 81.98110389709473, 82.23659172058106, 82.5960132598877, 81.69333343505859, 82.2900779724121, 82.25928497314453]
+simi=[0.7547839909791947, 0.7856211125850677, 0.8029748439788819, 0.8282754972577095, 0.8387909956276417, 0.8391856044530869, 0.8623758107423782, 0.8510716065764428, 0.8513404950499535, 0.868307477235794, 0.8756261840462685, 0.8758908629417419, 0.8698391482234001, 0.8869664534926415, 0.882393603771925, 0.8817783087491989, 0.8863407582044601, 0.8854909315705299, 0.8881886221468449, 0.8771314047276974, 0.8809413976967335, 0.8879366502165794, 0.8865529887378216, 0.8892537355422974, 0.9017179496586323, 0.9000930950045586, 0.8921477980911732, 0.8932537667453289, 0.8923573315143585, 0.8956426970660687, 0.8985889405012131, 0.8975692935287952, 0.9001459673047065, 0.8987848192453385, 0.9099127478897572, 0.9014029517769814, 0.8988295011222363, 0.8972342051565647, 0.9009563431143761, 0.9046037673950196, 0.8985090419650078, 0.9075377456843853, 0.9019553296267986, 0.9110799498856068, 0.900225818157196, 0.9083577327430248, 0.9067456088960171, 0.9025635376572609, 0.9056509383022785,0.38484812065174706, 0.4140883246534749, 0.4444750991306807, 0.4692305080200497, 0.49841340717516447, 0.5200588849030043, 0.5447565464597, 0.5580334577121233, 0.5816844177873511, 0.5901803622120305, 0.6107156496298941, 0.6136947658501173, 0.6338699113381536, 0.6433537122450377, 0.6446792204129068, 0.6557812888371317, 0.6667249409775985, 0.6700872744384565, 0.6778458683114302, 0.6849721522707688, 0.6920447101718501, 0.69618573596603, 0.7079291930324153, 0.7047586023807526, 0.7098674984354721, 0.7201869362278989, 0.7206398505913584, 0.7286627562422502, 0.727043721864098, 0.7355659459766589, 0.742438234780964, 0.7440960118645116, 0.745214246135009, 0.7466227208313189, 0.7531399529231222, 0.7522462430753206, 0.7595019701280092, 0.7620692444475073, 0.7641217178420017, 0.7628509615596972, 0.7676459779864864, 0.7766203033296686, 0.7745156404219176, 0.7849747206035413, 0.7801915134254255, 0.7804252728035576, 0.7872347844274421, 0.7863475655254565, 0.7903043884980051]
+TITLE = 'Dataset with distribution 1'
+LABEL_X = r'Round'
+LABEL_Y = r'Accurancy'
+LABEL_TITLE = 'Dataset with distribution 1'
+FLAG_GRID = True
+
+
+
+LEGEND_POSITION = 2
+FONT_SIZE_LEGEND = 20
+FONT_SIZE_AXIS = 15
+FONT_SIZE_LABEL = 26
+FONT_SIZE_TITLE = 26
+LEGEND_BOX_FLAG = False
+NUM_LINES=3
+#by default, all legend texts are set to 'linei'
+LEGEND_TEXT = []
+for i in range(NUM_LINES):
+    LEGEND_TEXT.append('Line'+str(i))
+LEGEND_TEXT[0] = 'RL'
+LEGEND_TEXT[1] = 'Distributed group'
+LEGEND_TEXT[2] = '0 Recommmendation'
+
+# ================================== plot figure ============================================================
+fig = plt.figure()
+ax = fig.add_axes([0.15, 0.15, 0.75, 0.75])
+#plt.axes([0.15, 0.15, 0.75, 0.75])
+
+lines = []
+lg = plt.legend(labels = LEGEND_TEXT, loc =LEGEND_POSITION, numpoints=1, markerscale=1, fontsize=FONT_SIZE_LEGEND, ncol =1, bbox_to_anchor=[0.01,0.99] )
+if not LEGEND_BOX_FLAG:
+    lg.draw_frame(False)
+
+# matplotlib.text.Text instances
+# for t in leg.get_texts():
+#     t.set_fontsize(FONT_SIZE_LEGEND)  # the legend text fontsize
+#     print(t.get_fontproperties())
+#     fp = t.get_fontproperties()
+#     fp = mpl.font_manager.FontProperties(family='times new roman', style='normal', weight=100, size=FONT_SIZE_LEGEND)
+#     t.set_font_properties(fp)
+#
+# # set line width of legend. matplotlib.lines.Line2D instances
+# for l in leg.get_lines():
+#     l.set_linewidth(1.5)  # the legend line width
+
+# Title and label
+if LABEL_TITLE != None:
+    plt.title(LABEL_TITLE, fontsize=FONT_SIZE_TITLE, fontname='Times New Roman' )
+
+if LABEL_X != None:
+    plt.xlabel(LABEL_X, fontsize=FONT_SIZE_LABEL, fontname='Times New Roman')
+if LABEL_Y != None:
+    plt.ylabel(LABEL_Y, fontsize=FONT_SIZE_LABEL, fontname='Times New Roman')
+
+# grid
+plt.grid(FLAG_GRID)
+
+# axises
+if X_LIM != None:
+    plt.xlim(X_LIM)
+if Y_LIM != None:
+    plt.ylim(Y_LIM)
+# major ticks
+#plt.xticks([0,1,2,3,4,5])
+# plt.yticks([0.0, 0.2,0.4,0.6],
+# 			['-5',  '-3',  '-1',  '1'])
+
+# minor ticks
+#ax = plt.gca()
+ax.xaxis.set_minor_locator(mpl.ticker.AutoMinorLocator(4))
+ax.yaxis.set_minor_locator(mpl.ticker.AutoMinorLocator(4))
+plt.tick_params(which='minor', length=2, color='k')
+
+# for the minor ticks, use no labels; default NullFormatter
+#ax.xaxis.set_minor_locator(minorLocator)
+
+for tick in ax.xaxis.get_major_ticks():
+    tick.label1.set_fontsize(FONT_SIZE_AXIS)
+    tick.label1.set_fontname('Times New Roman')
+for tick in ax.yaxis.get_major_ticks():
+    tick.label1.set_fontsize(FONT_SIZE_AXIS)
+    tick.label1.set_fontname('Times New Roman')
+
+for label in ax.xaxis.get_ticklabels():
+    label.set_color('red')
+    label.set_rotation(45)
+    label.set_fontsize(FONT_SIZE_AXIS)
+    label.set_fontname('Times New Roman')
+for label in ax.yaxis.get_ticklabels():
+    #label.set_color('red')
+    #label.set_rotation(45)
+    label.set_fontsize(FONT_SIZE_AXIS)
+    label.set_fontname('Times New Roman')
+
+ax.spines['bottom'].set_linewidth(LINE_WIDTH_AXIS)
+ax.spines['left'].set_linewidth(LINE_WIDTH_AXIS)
+ax.spines['top'].set_linewidth(LINE_WIDTH_AXIS)
+ax.spines['right'].set_linewidth(LINE_WIDTH_AXIS)
+for line in ax.xaxis.get_ticklines():
+    # line is a Line2D instance
+    #line.set_color('green')
+    line.set_markersize(4)  # line length
+    line.set_markeredgewidth(1.2) # line width
+for line in ax.yaxis.get_ticklines():
+    # line is a Line2D instance
+    #line.set_color('green')     # line color
+    line.set_markersize(4)      # line length
+    line.set_markeredgewidth(1.2) # line width
+
+#tight_layout automatically adjusts subplot params so that the subplot(s) fits in to the figure area
+#plt.tight_layout(pad=0.4, w_pad=0.5, h_pad=1.0)
